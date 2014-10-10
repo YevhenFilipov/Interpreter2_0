@@ -1,6 +1,8 @@
 package entity;
 
 
+import java.util.Arrays;
+
 public class BrainFuckData {
 
     private char[] charArray;
@@ -11,12 +13,12 @@ public class BrainFuckData {
         this.currentIndexInArray = 0;
     }
 
-    public char[] getCharArray() {
-        return charArray;
+    public char getCurrentCharFromArray() {
+        return charArray[currentIndexInArray];
     }
 
-    public void setCharArray(char[] charArray) {
-        this.charArray = charArray;
+    public void setCurrentCharToArray(char charToArray) {
+        this.charArray[currentIndexInArray] = charToArray;
     }
 
     public int getCurrentIndexInArray() {
@@ -25,5 +27,25 @@ public class BrainFuckData {
 
     public void setCurrentIndexInArray(int currentIndexInArray) {
         this.currentIndexInArray = currentIndexInArray;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        BrainFuckData that = (BrainFuckData) o;
+
+        if (currentIndexInArray != that.currentIndexInArray) return false;
+        if (!Arrays.equals(charArray, that.charArray)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Arrays.hashCode(charArray);
+        result = 31 * result + currentIndexInArray;
+        return result;
     }
 }
