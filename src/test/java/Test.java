@@ -12,11 +12,11 @@ public class Test {
                 " .>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.\n" +
                 " ------.--------.>+.>." ;
 
-        String stringCodeWithInnerLoops = ">+>+>+>+>++<[>[<+++>->>>>>>+>+>+>+>++<[>[<+++>->>>>>>+>+>+>+>++<[>[<+++>->>>>>>+>+>+>+>++<[>[<+++>->>>>>+++[->+++++<]>[-]<<<<<<]<<]>[-]<<<<<]<<]>[-]<<<<<]<<]>[-]<<<<<]<<]>.";
+        //String stringCodeWithInnerLoops = ">+>+>+>+>++<[>[<+++>->>>>>>+>+>+>+>++<[>[<+++>->>>>>>+>+>+>+>++<[>[<+++>->>>>>>+>+>+>+>++<[>[<+++>->>>>>+++[->+++++<]>[-]<<<<<<]<<]>[-]<<<<<]<<]>[-]<<<<<]<<]>[-]<<<<<]<<]>.";
 
 
         BrainFuckData data = new BrainFuckData();
-        BrainFuckCode code = new BrainFuckCode(stringCodeWithInnerLoops);
+        BrainFuckCode code = new BrainFuckCode(stringCode);
         Interpreter interpreter = new Interpreter();
         interpreter.interpret(data, code);
     }
